@@ -36,7 +36,9 @@
     }
 
     .container {
-      width: min(var(--container), calc(100% - 32px));
+      width: min(var(--container), 100%);
+      max-width: var(--container);
+      padding-inline: 16px;
       margin: 0 auto;
     }
 
