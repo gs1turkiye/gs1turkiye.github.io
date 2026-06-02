@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <title>Profil | GS1 Türkiye</title>
+
+  <style>
+    :root {
+      --gs1-blue: rgb(0, 44, 108);
+      --gs1-orange: rgb(242, 99, 52);
+      --gs1-light-gray: rgb(244, 244, 244);
+      --gs1-text: #1b1f23;
+      --gs1-muted: #5f6f7e;
+      --gs1-border: #d9e2ec;
+      --white: #ffffff;
+      --container: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Gotham Office", "Gotham", Arial, Helvetica, sans-serif;
+      color: var(--gs1-text);
+      background: var(--gs1-light-gray);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--gs1-blue);
+      color: var(--white);
+    }
+
+    .site-header .container {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+      padding: 10px 0;
+    }
+
+    .site-logo {
+      display: block;
+      width: auto;
+      height: 52px;
+    }
+
+    .language-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .language-control select {
+      appearance: none;
+      -webkit-appearance: none;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #ffffff;
+      font: inherit;
+      padding: 6px 22px 6px 6px;
+      cursor: pointer;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #ffffff 50%),
+        linear-gradient(135deg, #ffffff 50%, transparent 50%);
+      background-position:
+        calc(100% - 12px) 52%,
+        calc(100% - 7px) 52%;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+    }
+
+    .language-control select:focus {
+      outline: 1px solid rgba(255, 255, 255, 0.7);
+      outline-offset: 3px;
+    }
+
+    .language-control option {
+      color: var(--gs1-text);
+      background: #ffffff;
+    }
+
+    /* Main */
+    .profile-main {
+      min-height: calc(100vh + 360px);
+      background:
+        linear-gradient(180deg, #ffffff 0%, var(--gs1-light-gray) 100%);
+      padding: 56px 0 120px;
+    }
+
+    .profile-shell {
+      width: min(520px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .photo-frame {
+      width: min(100%, calc(100vw - 32px));
+      max-width: 520px;
+      aspect-ratio: 1 / 1;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      will-change: transform;
+      overflow: hidden;
+      border: 1px solid var(--gs1-border);
+      background:
+        linear-gradient(135deg, rgba(0, 44, 108, 0.08), rgba(242, 99, 52, 0.10)),
+        #ffffff;
+      display: grid;
+      place-items: center;
+      color: var(--gs1-blue);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      box-shadow: 0 18px 40px rgba(0, 44, 108, 0.12);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+      filter: blur(var(--photo-blur, 0px)) saturate(var(--photo-saturation, 1));
+      transform: scale(var(--photo-scale, 1));
+      transform-origin: center;
+      will-change: filter, transform;
+    }
+
+    .photo-frame.has-photo img {
+      display: block;
+    }
+
+    .photo-frame.has-photo .photo-placeholder-text {
+      display: none;
+    }
+
+    .photo-placeholder-text {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 44, 108, 0.25);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+    }
+
+    @keyframes profileCardIntro {
+      0% {
+        transform: translateY(28px);
+      }
+      65% {
+        transform: translateY(-8px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .profile-card {
+      position: relative;
+      z-index: 2;
+      margin-top: 34px;
+      background: #ffffff;
+      border: 1px solid var(--gs1-border);
+      border-top: 5px solid var(--gs1-orange);
+      padding: 30px 34px 34px;
+      text-align: left;
+      box-shadow: 0 16px 36px rgba(0, 44, 108, 0.08);
+      animation: profileCardIntro 900ms cubic-bezier(0.22, 1, 0.36, 1) 350ms both;
+    }
+
+    .profile-card h1 {
+      margin: 0 0 8px;
+      color: var(--gs1-blue);
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .profile-card .role-line {
+      margin: 0 0 24px;
+      color: var(--gs1-muted);
+      font-size: 16px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .info-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .info-label {
+      color: var(--gs1-blue);
+      font-weight: 700;
+    }
+
+    .info-value {
+      color: #2a3138;
+    }
+
+    .bio-text {
+      color: #3a4652;
+    }
+
+    .empty-state {
+      margin-top: 20px;
+      padding: 16px;
+      border: 1px solid var(--gs1-border);
+      background: #ffffff;
+      color: var(--gs1-muted);
+      text-align: center;
+      display: none;
+    }
+
+    .empty-state.is-visible {
+      display: block;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile-card {
+        animation: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .site-header .container {
+        min-height: 68px;
+      }
+
+      .site-logo {
+        height: 44px;
+      }
+
+      .profile-main {
+        min-height: calc(100vh + 280px);
+        padding-top: 24px;
+        padding-bottom: 96px;
+      }
+
+      .photo-frame {
+        width: min(100%, calc(100vw - 24px));
+      }
+
+      .profile-card {
+        margin-top: 24px;
+        padding: 24px 22px 28px;
+      }
+
+      .profile-card h1 {
+        font-size: 25px;
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo-link" href="https://gs1tr.org/" target="_blank" rel="noopener" aria-label="GS1 Türkiye web sitesine git">
+        <img
+          src="assets/gs1turkiyelogo.png"
+          alt="GS1 Türkiye"
+          class="site-logo"
+          onerror="this.onerror=null; this.src='gs1turkiyelogo.png';"
+        />
+      </a>
+
+      <div class="language-control">
+        <select id="languageSelect" aria-label="Dil seçimi">
+          <option value="tr">TR</option>
+          <option value="en">ENG</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <div class="container">
+      <section class="profile-shell" aria-labelledby="profile-title">
+        <div class="photo-frame" aria-label="Profil fotoğrafı alanı">
+          <img id="profilePhoto" src="" alt="" />
+          <span class="photo-placeholder-text" data-i18n="photoPlaceholder">Fotoğraf</span>
+        </div>
+
+        <div class="profile-card">
+          <h1 id="profile-title">Cem Saydam</h1>
+          <p class="role-line" id="profileRole">Proje Yöneticisi</p>
+
+          <div class="info-list">
+            <div class="info-row">
+              <div class="info-label" data-i18n="bioLabel">Bio:</div>
+              <div class="info-value bio-text" id="profileBio">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label" data-i18n="emailLabel">Eposta:</div>
+              <div class="info-value"><a id="profileEmail" href="mailto:lorem@example.com">lorem@example.com</a></div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label" data-i18n="phoneLabel">Telefon:</div>
+              <div class="info-value"><a id="profilePhone" href="tel:1234">1234</a></div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label" data-i18n="linkedinLabel">LinkedIn:</div>
+              <div class="info-value"><a id="profileLinkedIn" href="#" target="_blank" rel="noopener">www...</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="empty-state" id="emptyState"></div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const uiTranslations = {
+      tr: {
+        photoPlaceholder: "Fotoğraf",
+        bioLabel: "Bio:",
+        emailLabel: "Eposta:",
+        phoneLabel: "Telefon:",
+        linkedinLabel: "LinkedIn:",
+        missingProfile: "Bu profile ait veri bulunamadı. URL'deki p parametresini kontrol edin."
+      },
+      en: {
+        photoPlaceholder: "Photo",
+        bioLabel: "Bio:",
+        emailLabel: "Email:",
+        phoneLabel: "Phone:",
+        linkedinLabel: "LinkedIn:",
+        missingProfile: "No data was found for this profile. Please check the p parameter in the URL."
+      }
+    };
+
+    const fallbackProfiles = {
+      "cem-saydam": {
+        name: "Cem Saydam",
+        title_tr: "Proje Yöneticisi",
+        title_en: "Project Manager",
+        bio_tr: "Lorem ipsum...",
+        bio_en: "Lorem ipsum...",
+        email: "cem.saydam@gs1tr.org",
+        phone: "+90 538 490 13 86",
+        linkedin: "https://www.linkedin.com/in/cem-saydam/",
+        photo: "assets/cem-saydam.jpeg"
+      }
+    };
+
+    const siteHeader = document.querySelector(".site-header");
+    const languageSelect = document.getElementById("languageSelect");
+    const photoFrame = document.querySelector(".photo-frame");
+    const profileCard = document.querySelector(".profile-card");
+    const profilePhoto = document.getElementById("profilePhoto");
+    const profileTitle = document.getElementById("profile-title");
+    const profileRole = document.getElementById("profileRole");
+    const profileBio = document.getElementById("profileBio");
+    const profileEmail = document.getElementById("profileEmail");
+    const profilePhone = document.getElementById("profilePhone");
+    const profileLinkedIn = document.getElementById("profileLinkedIn");
+    const emptyState = document.getElementById("emptyState");
+    const photoHeaderGap = 4;
+
+    let currentLanguage = "en";
+    let currentProfile = null;
+    let ticking = false;
+
+    function getInitialLanguage() {
+      const savedLanguage = localStorage.getItem("profileLanguage");
+      if (savedLanguage === "tr" || savedLanguage === "en") {
+        return savedLanguage;
+      }
+
+      const browserLanguage = navigator.language || navigator.userLanguage || "en";
+      return browserLanguage.toLowerCase().startsWith("tr") ? "tr" : "en";
+    }
+
+    function getProfileSlug() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("p") || "cem-saydam";
+    }
+
+    function applyUiLanguage(language) {
+      const dictionary = uiTranslations[language] || uiTranslations.en;
+      document.documentElement.lang = language;
+      languageSelect.value = language;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      if (emptyState.classList.contains("is-visible")) {
+        emptyState.textContent = dictionary.missingProfile;
+      }
+    }
+
+    function getLocalizedValue(profile, fieldBase, language) {
+      return profile[`${fieldBase}_${language}`] || profile[`${fieldBase}_en`] || profile[`${fieldBase}_tr`] || "";
+    }
+
+    function renderProfile(profile) {
+      currentProfile = profile;
+      const role = getLocalizedValue(profile, "title", currentLanguage);
+      const bio = getLocalizedValue(profile, "bio", currentLanguage);
+
+      profileTitle.textContent = profile.name || "";
+      profileRole.textContent = role;
+      profileBio.textContent = bio;
+
+      profileEmail.textContent = profile.email || "";
+      profileEmail.href = profile.email ? `mailto:${profile.email}` : "#";
+
+      profilePhone.textContent = profile.phone || "";
+      profilePhone.href = profile.phone ? `tel:${profile.phone.replace(/\s+/g, "")}` : "#";
+
+      profileLinkedIn.textContent = profile.linkedin || "www...";
+      profileLinkedIn.href = profile.linkedin || "#";
+
+      document.title = `${profile.name || "Profil"} | GS1 Türkiye`;
+
+      if (profile.photo) {
+        profilePhoto.src = profile.photo;
+        profilePhoto.alt = profile.name || "Profil fotoğrafı";
+        profilePhoto.onerror = () => {
+          profilePhoto.removeAttribute("src");
+          profilePhoto.alt = "";
+          photoFrame.classList.remove("has-photo");
+        };
+        photoFrame.classList.add("has-photo");
+      } else {
+        profilePhoto.removeAttribute("src");
+        profilePhoto.alt = "";
+        profilePhoto.onerror = null;
+        photoFrame.classList.remove("has-photo");
+      }
+    }
+
+    async function loadProfiles() {
+      try {
+        const response = await fetch("data/profiles.json", { cache: "no-store" });
+        if (!response.ok) throw new Error("profiles.json could not be loaded");
+        return await response.json();
+      } catch (error) {
+        console.warn("Using fallback profile data:", error);
+        return fallbackProfiles;
+      }
+    }
+
+    function showMissingProfile() {
+      const dictionary = uiTranslations[currentLanguage] || uiTranslations.en;
+      emptyState.textContent = dictionary.missingProfile;
+      emptyState.classList.add("is-visible");
+    }
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      applyUiLanguage(language);
+      localStorage.setItem("profileLanguage", language);
+
+      if (currentProfile) {
+        renderProfile(currentProfile);
+      }
+    }
+
+    function updatePhotoParallax() {
+      if (!photoFrame || !siteHeader || !profileCard) return;
+
+      const scrollY = window.scrollY || window.pageYOffset;
+      const currentTranslateY = getComputedStyle(photoFrame).transform;
+      photoFrame.style.transform = "translateY(0)";
+
+      const headerBottom = siteHeader.getBoundingClientRect().bottom;
+      const photoRect = photoFrame.getBoundingClientRect();
+      const cardRect = profileCard.getBoundingClientRect();
+      const photoTop = photoRect.top;
+      const pinnedTranslateY = Math.max(0, headerBottom + photoHeaderGap - photoTop);
+      const translateY = Math.max(scrollY * 0.5, pinnedTranslateY);
+      const translatedPhotoBottom = photoRect.bottom + translateY;
+      const overlapStart = translatedPhotoBottom - cardRect.top;
+      const overlapDistance = Math.min(photoRect.height * 0.45, 220);
+      const overlapProgress = Math.min(Math.max(overlapStart / overlapDistance, 0), 1);
+      const blur = overlapProgress * 3.5;
+      const saturation = 1 - overlapProgress * 0.45;
+      const scale = 1 + overlapProgress * 0.025;
+
+      photoFrame.style.transform = currentTranslateY;
+      photoFrame.style.transform = `translateY(${translateY}px)`;
+      photoFrame.style.setProperty("--photo-blur", `${blur.toFixed(2)}px`);
+      photoFrame.style.setProperty("--photo-saturation", saturation.toFixed(2));
+      photoFrame.style.setProperty("--photo-scale", scale.toFixed(3));
+      ticking = false;
+    }
+
+    function requestPhotoParallaxUpdate() {
+      if (!ticking) {
+        window.requestAnimationFrame(updatePhotoParallax);
+        ticking = true;
+      }
+    }
+
+    async function init() {
+      setLanguage(getInitialLanguage());
+
+      const profiles = await loadProfiles();
+      const slug = getProfileSlug();
+      const profile = profiles[slug];
+
+      if (profile) {
+        renderProfile(profile);
+      } else {
+        showMissingProfile();
+      }
+
+      updatePhotoParallax();
+    }
+
+    languageSelect.addEventListener("change", (event) => {
+      setLanguage(event.target.value);
+    });
+
+    window.addEventListener("scroll", requestPhotoParallaxUpdate, { passive: true });
+    window.addEventListener("resize", updatePhotoParallax);
+
+    init();
+  </script>
+</body>
+</html>

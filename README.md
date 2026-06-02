@@ -1,2 +1,2 @@
-# gs1turkiye.github.io
-GS1 Türkiye Kartvizit Sayfaları
+# cemsaydam.github.io
+Professional profile cards used as business cards
