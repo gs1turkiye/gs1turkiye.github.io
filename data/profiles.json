@@ -10,6 +10,17 @@
     "linkedin": "https://www.linkedin.com/in/cem-saydam/",
     "photo": "assets/cem-saydam.jpeg"
   },
+  "elif-bilgehan-muftuoglu": {
+    "name": "Elif Bilgehan MÜFTÜOĞLU",
+    "title_tr": "Genel Müdür",
+    "title_en": "CEO",
+    "bio_tr": "Kariyerine ABD’de Uydu Görüntü İşleme ve Coğrafi Bilgi Sistemleri alanlarında başlayan Elif Müftüoğlu, Türkiye’ye dönüşünün ardından Devlet Malzeme Ofisi’nde Bilgi Teknolojileri departmanında görev almıştır. Bu dönemde kurumun e-ihale ve e-satınalma sistemlerinin hayata geçirilmesinde önemli rol üstlenmiştir. Daha sonra Türkiye Odalar ve Borsalar Birliği’nde (TOBB) BT Proje Yöneticisi olarak görev yapmış ve Ticaret Sicili’nin dijital dönüşüm çalışmalarından sorumlu olmuştur. Ayrıca Türkiye Yatırım Ortamının İyileştirilmesi Koordinasyon Kurulu kapsamında Fikri Mülkiyet Hakları ve Ar-Ge Teknik Komitesi çalışmalarında yer almıştır. Ekim 2014’ten bu yana GS1 Türkiye’nin CEO’su olarak görev yapmaktadır. 2021 yılından itibaren, İzlanda’dan Kazakistan’a uzanan ve İsrail, Rusya ile Birleşik Arap Emirlikleri’nin de dahil olduğu 49 üyeli GS1 Avrupa organizasyonunda Başkan Yardımcılığı görevini sürdürmektedir. Aynı zamanda 2022 yılından bu yana GS1 Federasyonu bünyesinde Dijital Ürün Pasaportu (Digital Product Passport – DPP) programının sponsoru olarak görev almakta ve küresel ölçekte yürütülen çalışmalara liderlik etmektedir.",
+    "bio_en": "Started her career in USA working on Satellite Image Processing and Geographic Information Systems, she began to work at the IT department of State Supply Office as she returned back to Turkiye. She played a major role on establishing the e-bidding and e-supply systems of the Office. Continued to work as IT Project Manager at the Union of Chambers and Commodity Exchanges of Turkiye (TOBB), being responsible from digitalization of Trade Registry. She also worked for IP Rights and R&D Technical Committee of the Coordination Council for the Improvement of Investment Environment of Turkiye. In October 2014 she has started to work as the CEO of GS1 Turkiye. Since 2021 she has been the Vice-Chair of GS1 in Europe composed of 49 member countries from Iceland to Kazakhstan, including Israel, Russia and UAE. She has been the programme sponspor of Digital Product Passport (DPP) Programme within the GS1 Federation since 2022, providing leadership to global initiatives in this field.",
+    "email": "elif.muftuoglu@gs1tr.org",
+    "phone": "+90 536 489 1019",
+    "linkedin": "https://www.linkedin.com/in/elifmuftuoglu/",
+    "photo": "assets/elif-muftuoglu.png"
+  },
   "ada-jalis-yeniocak": {
     "name": "Ada Jalis Yeniocak",
     "title_tr": "İş Geliştirme Uzmanı",
@@ -22,7 +33,7 @@
     "photo": "assets/ada-yeniocak.png"
   },
   "cihan-korucu": {
-    "name": "Cem Saydam",
+    "name": "Cihan Korucu",
     "title_tr": "Proje Yöneticisi",
     "title_en": "Project Manager",
     "bio_tr": "",
