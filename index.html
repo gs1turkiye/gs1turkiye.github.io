@@ -221,7 +221,7 @@
 
     .info-row {
       display: grid;
-      grid-template-columns: 96px 1fr;
+      grid-template-columns: 96px minmax(0, 1fr);
       gap: 18px;
       padding-bottom: 18px;
       border-bottom: 1px solid #edf1f5;
@@ -237,6 +237,7 @@
       color: var(--gs1-blue);
       font-weight: 700;
       min-width: 0;
+      white-space: nowrap;
     }
 
     .info-value {
@@ -245,6 +246,7 @@
       padding-inline-end: 12px;
       overflow-wrap: anywhere;
       min-width: 0;
+      width: 100%;
       word-break: break-word;
     }
 
