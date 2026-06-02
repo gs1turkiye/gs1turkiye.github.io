@@ -407,6 +407,10 @@
     const profileEmail = document.getElementById("profileEmail");
     const profilePhone = document.getElementById("profilePhone");
     const profileLinkedIn = document.getElementById("profileLinkedIn");
+    const profileBioRow = profileBio.closest(".info-row");
+    const profileEmailRow = profileEmail.closest(".info-row");
+    const profilePhoneRow = profilePhone.closest(".info-row");
+    const profileLinkedInRow = profileLinkedIn.closest(".info-row");
     const emptyState = document.getElementById("emptyState");
     const photoHeaderGap = 4;
 
@@ -454,19 +458,34 @@
       currentProfile = profile;
       const role = getLocalizedValue(profile, "title", currentLanguage);
       const bio = getLocalizedValue(profile, "bio", currentLanguage);
+      const email = profile.email || "";
+      const phone = profile.phone || "";
+      const linkedin = profile.linkedin || "";
+
+      const hasRole = role.trim() !== "";
+      const hasBio = bio.trim() !== "";
+      const hasEmail = email.trim() !== "";
+      const hasPhone = phone.trim() !== "";
+      const hasLinkedIn = linkedin.trim() !== "";
 
       profileTitle.textContent = profile.name || "";
       profileRole.textContent = role;
+      profileRole.style.display = hasRole ? "" : "none";
+
       profileBio.textContent = bio;
+      profileBioRow.style.display = hasBio ? "grid" : "none";
 
-      profileEmail.textContent = profile.email || "";
-      profileEmail.href = profile.email ? `mailto:${profile.email}` : "#";
+      profileEmail.textContent = email;
+      profileEmail.href = hasEmail ? `mailto:${email}` : "#";
+      profileEmailRow.style.display = hasEmail ? "grid" : "none";
 
-      profilePhone.textContent = profile.phone || "";
-      profilePhone.href = profile.phone ? `tel:${profile.phone.replace(/\s+/g, "")}` : "#";
+      profilePhone.textContent = phone;
+      profilePhone.href = hasPhone ? `tel:${phone.replace(/\s+/g, "")}` : "#";
+      profilePhoneRow.style.display = hasPhone ? "grid" : "none";
 
-      profileLinkedIn.textContent = profile.linkedin || "www...";
-      profileLinkedIn.href = profile.linkedin || "#";
+      profileLinkedIn.textContent = linkedin;
+      profileLinkedIn.href = hasLinkedIn ? linkedin : "#";
+      profileLinkedInRow.style.display = hasLinkedIn ? "grid" : "none";
 
       document.title = `${profile.name || "Profil"} | GS1 Türkiye`;
 
