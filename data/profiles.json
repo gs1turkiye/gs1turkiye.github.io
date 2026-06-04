@@ -1,4 +1,4 @@
-{ 
+{
   "cem-saydam": {
     "name": "Cem Saydam",
     "title_tr": "Proje Yöneticisi",
@@ -42,5 +42,16 @@
     "phone": "+90 312 218 22 72",
     "linkedin": "https://www.linkedin.com/in/cihan-k",
     "photo": "assets/cihan-korucu.jpg"
+  },
+  "pinar-yurdakul": {
+    "name": "Pınar Yurdakul Gürbüz",
+    "title_tr": "Avukat",
+    "title_en": "Attorney",
+    "bio_tr": "TOBB Ekonomi Ve Teknoloji Üniversitesi Hukuk Fakültesi mezunu.",
+    "bio_en": "TOBB University of Economics and Technology, Faculty of Law Graduate.",
+    "email": "pinar.yurdakul@gs1tr.org",
+    "phone": "+90 507 999 83 97",
+    "linkedin": "https://www.linkedin.com/in/pınar-yurdakul-gürbüz/",
+    "photo": "assets/pinar-profil.jpeg"
   }
 }
