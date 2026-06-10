@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GS1 Türkiye Dijital Ürün Pasaportu Demo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-highlight-mode="normal">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="GS1 Türkiye Dijital Ürün Pasaportu Demo">
+        <img src="assets/GS1_Turkey_Localised_Large_RGB_2014-12-17.png" alt="GS1 Türkiye" class="brand-logo">
+        <span>
+          <strong>Dijital Ürün Pasaportu Demo</strong>
+          <small>GS1 standartlarıyla ürün kimliği, izlenebilirlik ve veri paylaşımı</small>
+        </span>
+      </a>
+      <span class="demo-badge">Demo</span>
+    </header>
+
+    <button class="standards-toggle" id="standards-toggle" type="button" aria-controls="standards-panel" aria-expanded="true">
+      GS1 Katmanı
+    </button>
+
+    <main>
+      <section class="intro-section" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">GS1 Türkiye demo arayüzü</p>
+          <h1 id="page-title">Sürdürülebilir Pamuklu Tişört için Dijital Ürün Pasaportu</h1>
+          <p>
+            Bu sayfa, GS1 standartlarının Dijital Ürün Pasaportu senaryosunda nasıl kullanılabileceğini göstermek amacıyla hazırlanmış bir demo arayüzdür. Buradaki ürün, şirket ve belge bilgileri temsili olarak oluşturulmuştur.
+          </p>
+        </div>
+
+        <aside class="standards-panel" id="standards-panel" aria-labelledby="standards-title">
+          <h2 id="standards-title">GS1 Standartları Katmanı</h2>
+          <p id="legend-text">Bu demo, bir ürünün Dijital Ürün Pasaportu içinde hangi verilerle temsil edilebileceğini gösterir.</p>
+          <div class="mode-switch" aria-label="Highlight görünümü">
+            <button class="mode-button active" type="button" data-mode="normal" aria-pressed="true">Normal Görünüm</button>
+            <button class="mode-button" type="button" data-mode="allGs1" aria-pressed="false">Tüm GS1 Standartlarını Göster</button>
+          </div>
+          <dl class="standard-list">
+            <div><dt>GTIN</dt><dd>Ürünü küresel olarak tanımlar.</dd></div>
+            <div><dt>GLN</dt><dd>Ekonomik operatörleri ve tesisleri tanımlar.</dd></div>
+            <div><dt>GS1 Digital Link</dt><dd>Fiziksel üründen dijital pasaporta standart bağlantı sağlar.</dd></div>
+            <div><dt>GS1 Application Identifiers</dt><dd>GTIN, lot ve seri numarası gibi verileri yapılandırır.</dd></div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="product-summary" aria-labelledby="product-title">
+        <div class="product-media">
+          <img src="assets/white-tee.png" alt="Sürdürülebilir pamuklu tişört görseli">
+        </div>
+
+        <div class="product-info">
+          <p class="eyebrow">Ürün Özeti</p>
+          <h2 id="product-title">Sürdürülebilir Pamuklu Tişört</h2>
+          <div class="info-grid">
+            <article class="dpp-field" data-gs1="true" data-standard="Marka">
+              <span class="field-label">Marka</span>
+              <strong class="field-value">Demo Marka</strong>
+              <span class="field-badges"><span>Ürün verisi</span></span>
+            </article>
+            <article class="dpp-field" data-gs1="true" data-standard="GTIN" data-ai="01">
+              <span class="field-label">GTIN</span>
+              <strong class="field-value">8698528500038</strong>
+              <span class="field-badges"><span>GS1 GTIN</span><span>AI (01)</span></span>
+            </article>
+            <article class="dpp-field" data-gs1="true" data-standard="Seri Numarası" data-ai="21">
+              <span class="field-label">Seri No</span>
+              <strong class="field-value">89666</strong>
+              <span class="field-badges"><span>AI (21)</span></span>
+            </article>
+            <article class="dpp-field" data-gs1="true" data-standard="Parti / Lot" data-ai="10">
+              <span class="field-label">Parti / Lot</span>
+              <strong class="field-value">LOT-2026-TR-001</strong>
+              <span class="field-badges"><span>AI (10)</span></span>
+            </article>
+            <article>
+              <span class="field-label">Model</span>
+              <strong class="field-value">defaultProduct</strong>
+            </article>
+            <article>
+              <span class="field-label">Menşe ülke</span>
+              <strong class="field-value">Türkiye</strong>
+            </article>
+            <article class="wide">
+              <span class="field-label">Üretici</span>
+              <strong class="field-value">Demo Tekstil Sanayi A.Ş.</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="digital-link-section card" aria-labelledby="digital-link-title">
+        <div class="digital-link-intro">
+          <p class="eyebrow">DPP Erişim Bilgisi</p>
+          <h2 id="digital-link-title">GS1 Digital Link URI</h2>
+          <p>Bu bağlantı, ürünün GS1 tanımlayıcıları kullanılarak dijital ürün pasaportuna bağlanmasını temsil eder.</p>
+        </div>
+
+        <div class="digital-link-body">
+          <div class="qr-placeholder dpp-field" data-gs1="true" data-standard="GS1 Digital Link" data-ai="01 10 21">
+            <canvas id="qr-canvas" width="132" height="132" aria-label="GS1 Digital Link QR temsili"></canvas>
+            <span class="field-badges"><span>GS1 Digital Link</span></span>
+          </div>
+
+          <div class="digital-link-content">
+            <div class="digital-link-box dpp-field" data-gs1="true" data-standard="GS1 Digital Link" data-ai="01 10 21">
+              <code id="digital-link">https://www.gs1tr.org/01/8698528500038/10/LOT-2026-TR-001/21/89666</code>
+              <span class="field-badges"><span>GS1 Digital Link</span><span>AI (01)</span><span>AI (10)</span><span>AI (21)</span></span>
+            </div>
+            <div class="ai-strip">
+              <div class="dpp-field" data-gs1="true" data-standard="GTIN" data-ai="01">
+                <span class="field-label">GTIN</span>
+                <strong>AI (01)</strong>
+                <span class="field-badges"><span>GTIN</span></span>
+              </div>
+              <div class="dpp-field" data-gs1="true" data-standard="Parti / Lot" data-ai="10">
+                <span class="field-label">Parti / Lot</span>
+                <strong>AI (10)</strong>
+                <span class="field-badges"><span>Lot</span></span>
+              </div>
+              <div class="dpp-field" data-gs1="true" data-standard="Seri Numarası" data-ai="21">
+                <span class="field-label">Seri Numarası</span>
+                <strong>AI (21)</strong>
+                <span class="field-badges"><span>Seri</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-grid" aria-label="DPP bilgi bölümleri">
+        <article class="passport-card">
+          <h2>Ürün Kimliği</h2>
+          <div class="field-list">
+            <div class="dpp-field" data-gs1="true" data-standard="GTIN" data-ai="01"><span>GTIN</span><strong>8698528500038</strong><span class="field-badges"><span>GTIN</span></span></div>
+            <div><span>Ürün adı</span><strong>Sürdürülebilir Pamuklu Tişört</strong></div>
+            <div><span>Marka</span><strong>Demo Marka</strong></div>
+            <div><span>Model</span><strong>defaultProduct</strong></div>
+            <div class="dpp-field" data-gs1="true" data-standard="Seri Numarası" data-ai="21"><span>Seri numarası</span><strong>89666</strong><span class="field-badges"><span>AI (21)</span></span></div>
+            <div class="dpp-field" data-gs1="true" data-standard="Parti / Lot" data-ai="10"><span>Parti / Lot</span><strong>LOT-2026-TR-001</strong><span class="field-badges"><span>AI (10)</span></span></div>
+            <div><span>Ürün kategorisi</span><strong>Tekstil / Giyim</strong></div>
+          </div>
+        </article>
+
+        <article class="passport-card">
+          <h2>Ekonomik Operatör Bilgileri</h2>
+          <div class="field-list">
+            <div class="dpp-field" data-gs1="true" data-standard="Ekonomik Operatör"><span>Üretici adı</span><strong>Demo Tekstil Sanayi A.Ş.</strong><span class="field-badges"><span>Ekonomik operatör</span></span></div>
+            <div class="dpp-field" data-gs1="true" data-standard="GLN"><span>Üretici GLN</span><strong>8698528500014</strong><span class="field-badges"><span>GLN</span></span></div>
+            <div><span>İthalatçı / yetkili temsilci</span><strong>Demo Marka Türkiye</strong></div>
+            <div><span>İletişim ülkesi</span><strong>Türkiye</strong></div>
+            <div><span>Web sitesi</span><strong>https://www.gs1tr.org</strong></div>
+          </div>
+        </article>
+
+        <article class="passport-card">
+          <h2>Üretim ve Tedarik Zinciri</h2>
+          <div class="field-list">
+            <div><span>Üretim tesisi</span><strong>Demo Üretim Tesisi</strong></div>
+            <div class="dpp-field" data-gs1="true" data-standard="GLN"><span>Tesis GLN</span><strong>8698528500021</strong><span class="field-badges"><span>GLN</span></span></div>
+            <div><span>Üretim ülkesi</span><strong>Türkiye</strong></div>
+            <div><span>Üretim tarihi</span><strong>15 Ocak 2026</strong></div>
+            <div><span>Tedarikçi referansı</span><strong>SUP-TR-COTTON-2048</strong></div>
+          </div>
+        </article>
+
+        <article class="passport-card">
+          <h2>Malzeme Bilgileri</h2>
+          <div class="field-list">
+            <div><span>Ana malzeme</span><strong>%92 organik pamuk, %8 elastan</strong></div>
+            <div><span>Geri dönüştürülmüş içerik oranı</span><strong>%18</strong></div>
+            <div><span>Tehlikeli madde beyanı</span><strong>Beyan edilen tehlikeli madde yok</strong></div>
+            <div><span>Boya / kimyasal işlem bilgisi</span><strong>Düşük su tüketimli reaktif boya</strong></div>
+          </div>
+        </article>
+
+        <article class="passport-card">
+          <h2>Sürdürülebilirlik Bilgileri</h2>
+          <div class="field-list">
+            <div><span>Karbon ayak izi</span><strong>4,8 kg CO₂e</strong></div>
+            <div><span>Su tüketimi</span><strong>1.240 litre</strong></div>
+            <div><span>Enerji tüketimi</span><strong>2,7 kWh</strong></div>
+            <div><span>Dayanıklılık bilgisi</span><strong>50 yıkama çevrimi</strong></div>
+            <div><span>Çevresel uygunluk beyanı</span><strong>Demo çevresel beyan kaydı</strong></div>
+          </div>
+        </article>
+
+        <article class="passport-card">
+          <h2>Onarım ve Kullanım</h2>
+          <div class="field-list">
+            <div><span>Bakım talimatları</span><strong>30°C hassas yıkama, düşük ısıda ütü</strong></div>
+            <div><span>Onarım talimatları</span><strong>Dikiş ve yama onarımı desteklenir</strong></div>
+            <div><span>Yedek parça bulunabilirliği</span><strong>Etiket ve düğme seti 3 yıl</strong></div>
+            <div><span>Kullanım ömrü beklentisi</span><strong>5 yıl</strong></div>
+          </div>
+        </article>
+
+        <article class="passport-card">
+          <h2>Geri Dönüşüm ve Bertaraf</h2>
+          <div class="field-list">
+            <div><span>Geri dönüşüm talimatı</span><strong>Tekstil toplama noktalarına teslim edin</strong></div>
+            <div><span>Ayrıştırma bilgisi</span><strong>Etiket ve aksesuarlar ayrı işlenebilir</strong></div>
+            <div><span>Ambalaj geri dönüşüm bilgisi</span><strong>Karton ambalaj geri dönüştürülebilir</strong></div>
+            <div><span>Bertaraf uyarıları</span><strong>Evsel atıkla karıştırmayın</strong></div>
+          </div>
+        </article>
+
+        <article class="passport-card">
+          <h2>Uygunluk ve Belgeler</h2>
+          <div class="field-list">
+            <div><span>Uygunluk beyanı</span><strong>Demo uygunluk beyanı</strong></div>
+            <div><span>Sertifikalar</span><strong>TR-DEMO-TEX-2026-001</strong></div>
+            <div><span>Test raporları</span><strong>TR-LAB-2026-4459</strong></div>
+            <div><span>Yetkili kurum bağlantıları</span><strong>Demo kurum kayıt bağlantısı</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="history-section" aria-labelledby="history-title">
+        <div class="section-heading">
+          <p class="eyebrow">EPCIS - Olay Verileri</p>
+          <h2 id="history-title">Ürün Geçmişi</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="history-event">
+            <span class="event-kicker">Üretim</span>
+            <h3>15 Ocak 2026, 09:30</h3>
+            <p>Demo Üretim Tesisi, İstanbul</p>
+          </article>
+          <article class="history-event">
+            <span class="event-kicker">Kalite Kontrol</span>
+            <h3>16 Ocak 2026, 10:15</h3>
+            <p>Demo Kalite Laboratuvarı, İstanbul</p>
+          </article>
+          <article class="history-event">
+            <span class="event-kicker">Sevkiyat</span>
+            <h3>18 Ocak 2026, 14:10</h3>
+            <p>Demo Lojistik Merkezi, Kocaeli</p>
+          </article>
+          <article class="history-event">
+            <span class="event-kicker">Satış</span>
+            <h3>22 Ocak 2026, 17:40</h3>
+            <p>Demo Mağaza, Ankara</p>
+          </article>
+          <article class="history-event">
+            <span class="event-kicker">Onarım</span>
+            <h3>12 Mayıs 2027, 11:45</h3>
+            <p>Yetkili Servis Noktası, Ankara</p>
+          </article>
+          <article class="history-event recycling-event dpp-field" data-gs1="true" data-standard="EPCIS">
+            <span class="event-kicker">Geri Dönüşüm</span>
+            <h3>20 Eylül 2029, 16:20</h3>
+            <p>Demo Geri Dönüşüm Tesisi, İzmir</p>
+            <dl>
+              <div><dt>Olay tipi</dt><dd>Geri Dönüşüm</dd></div>
+              <div class="dpp-field" data-gs1="true" data-standard="GLN/SGLN"><dt>GLN</dt><dd>8698528500045</dd><span class="field-badges"><span>GLN / SGLN</span></span></div>
+              <div><dt>İş adımı</dt><dd>recycling</dd></div>
+              <div><dt>Durum</dt><dd>recycled</dd></div>
+              <div class="dpp-field" data-gs1="true" data-standard="GS1 Digital Link"><dt>İlgili ürün</dt><dd>8698528500038 / LOT-2026-TR-001 / 89666</dd><span class="field-badges"><span>Digital Link</span></span></div>
+            </dl>
+            <span class="field-badges"><span>EPCIS Event</span></span>
+            <button class="show-epcis-button" type="button" data-event-id="recycling-event">EPCIS Olayını Göster</button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      Not: Bu sayfa yasal uygunluk beyanı değildir. Demo amacıyla hazırlanmıştır.
+    </footer>
+
+    <div class="modal-backdrop" id="epcis-modal" hidden aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="epcis-title" aria-describedby="epcis-description">
+        <header class="modal-header">
+          <div>
+            <p class="eyebrow">Geri Dönüşüm Olayı</p>
+            <h2 id="epcis-title">EPCIS Event Payload</h2>
+            <p id="epcis-description">Bu JSON payload, ürünün geri dönüşüm aşamasındaki izlenebilirlik olayını EPCIS 2.0 formatına benzer şekilde temsil eder.</p>
+          </div>
+          <button class="icon-button close-modal" type="button" aria-label="Kapat">×</button>
+        </header>
+        <pre class="epcis-code dpp-field" data-gs1="true" data-standard="EPCIS"><code id="epcis-json"></code><span class="field-badges"><span>EPCIS</span><span>GS1 Digital Link</span><span>GLN / SGLN</span></span></pre>
+        <div class="epcis-explainer">
+          <p>Bu olay, ürünün geri dönüşüm tesisinde gözlemlendiğini gösterir. EPCIS eventTime ile olay zamanını, epcList ile ilgili ürünü, bizStep ile iş adımını, disposition ile ürünün durumunu, readPoint ve bizLocation ile olayın gerçekleştiği yeri temsil eder.</p>
+          <ul>
+            <li><strong>eventTime:</strong> Olayın gerçekleştiği zaman</li>
+            <li><strong>epcList:</strong> Olayla ilişkili ürün veya ürün instance bağlantısı</li>
+            <li><strong>action:</strong> Olayın türü; örnekte OBSERVE</li>
+            <li><strong>bizStep:</strong> İş süreci adımı; örnekte recycling</li>
+            <li><strong>disposition:</strong> Ürünün olay sonrasındaki durumu; örnekte recycled</li>
+            <li><strong>readPoint / bizLocation:</strong> Olayın yakalandığı nokta ve iş lokasyonu</li>
+            <li><strong>sourceList / destinationList:</strong> Kaynak ve hedef taraf bilgisi</li>
+            <li><strong>ilmd:</strong> Olayla ilişkili ek yaşam döngüsü veya malzeme verisi</li>
+          </ul>
+          <p class="notice">Bu payload demo amaçlıdır; gerçek bir uygunluk beyanı veya resmi EPCIS kaydı değildir.</p>
+        </div>
+        <footer class="modal-actions">
+          <button class="secondary-button close-modal" type="button">Kapat</button>
+          <button class="primary-button" id="copy-epcis" type="button">JSON'u Kopyala</button>
+        </footer>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
