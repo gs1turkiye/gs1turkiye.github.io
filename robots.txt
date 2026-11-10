@@ -1,2 +1,5 @@
 User-agent: *
+Allow: /batterywhitepaper-web/
 Disallow: /
+
+Sitemap: https://gs1turkiye.github.io/batterywhitepaper-web/sitemap.xml
