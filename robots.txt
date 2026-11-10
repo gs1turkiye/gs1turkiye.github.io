@@ -1,5 +1,6 @@
 User-agent: *
+Allow: /batteryimplementationguideline/
 Allow: /batterywhitepaper-web/
 Disallow: /
 
-Sitemap: https://gs1turkiye.github.io/batterywhitepaper-web/sitemap.xml
+Sitemap: https://gs1turkiye.github.io/batteryimplementationguideline/sitemap.xml
